@@ -8,4 +8,5 @@ Food is an essential parameter that plays a vital role in the survival of humans
 
 How to Run the Project Locally
 Open the terminal/cmd in the Streamlit Folder and run the following command
-  streamlit run app.py
+streamlit run app.py
+
