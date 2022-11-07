@@ -24,9 +24,9 @@ st.sidebar.markdown(f"<span style='color: black;font-size: 36px;font-weight: bol
 st.sidebar.info("Welcome to Hashu Eatz 😋 Data Analytics. Here you can analyse the nutritional value of food and draw some schematics and get the right nutritive choice of recommandation as you like!")
 """"""
 #read csv file
-DATA_URL = ("./resources/assets_modified/01.csv")
+DATA_URL = ("Streamlit/resources/assets_modified/01.csv")
 
-DATA_URL2 = ("./resources/recipe_page/recipe.csv")
+DATA_URL2 = ("Streamlit/resources/recipe_page/recipe.csv")
 
 
 #for data caching
@@ -51,8 +51,8 @@ data2= load_data2()
 
 #global variable/dataframe
 #path to the csv file of the ifct database for demographics page
-df_demographics = pd.read_csv("./resources/assets_modified/01cat.csv")
-df_demographics_nonveg= pd.read_csv("./resources/assets_modified/02cat.csv")
+df_demographics = pd.read_csv("Streamlit/resources/assets_modified/01cat.csv")
+df_demographics_nonveg= pd.read_csv("Streamlit/resources/assets_modified/02cat.csv")
 
 #drop row/column if all values there are NA
 df_demographics.dropna()
@@ -87,7 +87,7 @@ def main():
 #function for the about page
 def about_page():
     st.markdown("<h1 style='text-align: center;'>Hashu Eatz 🍲 🩺</h1>", unsafe_allow_html=True)
-    st.image("./resources/foood.jpg")
+    st.image("Streamlit/resources/foood.jpg")
     st.subheader("About Hashu Eatz 🤔")
 
     
@@ -630,7 +630,7 @@ def page_three():
 def page_six():
     st.title("Food Recommendation System")
     st.text("Let us refer what you prefer!")
-    st.image("./resources/f1.jpg")
+    st.image("Streamlit/resources/f1.jpg")
 
     ## nav = st.sidebar.radio("Navigation",["Home","IF Necessary 1","If Necessary 2"])
 
@@ -647,9 +647,9 @@ def page_six():
 
 
 
-    food = pd.read_csv("./resources/input/food.csv")
+    food = pd.read_csv("Streamlit/resources/input/food.csv")
     
-    ratings = pd.read_csv("./resources/input/ratings.csv")
+    ratings = pd.read_csv("Streamlit/resources/input/ratings.csv")
     combined = pd.merge(ratings, food, on='Food_ID')
 
     #ans = food.loc[(food.C_Type == cuisine) & (food.Veg_Non == vegn),['Name','C_Type','Veg_Non']]
@@ -707,7 +707,7 @@ def page_six():
 
 
 def page_five():
-    df = pd.read_csv("./resources/Food_Matrix/Food_Matrix1.csv")  # read a CSV file inside the 'data" folder next to 'app.py'
+    df = pd.read_csv("Streamlit/resources/Food_Matrix/Food_Matrix1.csv")  # read a CSV file inside the 'data" folder next to 'app.py'
 
 
     st.title("Food Matrix 🍔")  # add a title
@@ -716,12 +716,12 @@ def page_five():
     st.subheader("1. Food Compatibility Matrix (Food Categories)")
     st.markdown("There are certain combinations of foods which are harmful to health when consumed together. They may become difficult to digest, and may cause problems such as acidity. They may even be toxic and lead to diseases. For example, fruits should be consumed separately and not with any meal. It is necessary for people to be aware of such food combinations, so that they do not consume them together, or use them together in cooking. The below data shows various combinations of generalized food categories, and indicates which of these combinations are harmful (toxic) or harmless (non-toxic). ")
     
-    df_display1 = pd.read_csv("./resources/Food_Matrix/Food_Matrix1.csv")
+    df_display1 = pd.read_csv("Streamlit/resources/Food_Matrix/Food_Matrix1.csv")
     
-    df = pd.read_csv("./resources/Food_Matrix/Food_Matrix1.csv")
+    df = pd.read_csv("Streamlit/resources/Food_Matrix/Food_Matrix1.csv")
 
     st.subheader("Visualization of the raw data 📈")  # add a title
-    data = pd.read_csv('./resources/Food_Matrix/Food_Matrix1.csv' , na_values= "NaN")
+    data = pd.read_csv('Streamlit/resources/Food_Matrix/Food_Matrix1.csv' , na_values= "NaN")
     data.fillna(0 , inplace = True)
 
 
@@ -757,15 +757,15 @@ def page_five():
     st.subheader("2. Food compatibility matrix (For harmful combinations of specific food items)")
     st.markdown("Apart from the above generalized categories, there are some specific food items which are harmful when consumed together. Most people are not aware of these combinations. A prominent example is banana milkshake. It is a popular beverage but most people are not aware that milk should not be consumed with bananas as it causes heaviness and may also lead to lethargy. Such combinations of food items are indicated in the below data.")
 
-    df2 = pd.read_csv("./resources/Food_Matrix/Food_Matrix2.csv")  # read a CSV file inside the 'data" folder next to 'app.py'
+    df2 = pd.read_csv("Streamlit/resources/Food_Matrix/Food_Matrix2.csv")  # read a CSV file inside the 'data" folder next to 'app.py'
 
-    df21 = pd.read_csv("./resources/Food_Matrix/Food_Matrix2.csv")
+    df21 = pd.read_csv("Streamlit/resources/Food_Matrix/Food_Matrix2.csv")
 
    
 
 
     st.subheader("Visualization of the above given data 📈")  # add a title
-    data2 = pd.read_csv('./resources/Food_Matrix/Food_Matrix2.csv' , na_values= "NaN")
+    data2 = pd.read_csv('Streamlit/resources/Food_Matrix/Food_Matrix2.csv' , na_values= "NaN")
     data2.fillna(0 , inplace = True)
 
 
